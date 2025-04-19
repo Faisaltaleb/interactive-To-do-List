@@ -37,3 +37,7 @@ function toggleComplete(index) {
     tasks[index].completed = !tasks[index].completed;
     renderTasks();
 }
+function deleteTask(index) {
+    tasks.splice(index, 1);
+    renderTasks();
+}
