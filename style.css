@@ -13,3 +13,9 @@ body {
     align-items: center;
     height: 100vh;
 }
+
+h1 {
+    font-size: 2rem;
+    margin-bottom:20px;
+    color:cyan
+}
