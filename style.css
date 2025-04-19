@@ -63,4 +63,28 @@ button:hover{
 .filters button[data-filter="all"]:hover {
     background-color: #005A9E;
 }
+ul {
+    list-style-type: none;
+    padding: 0;
+}
 
+li{
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #f9f9f9;
+padding: 10px ;
+margin: 5px 0 ;
+border: 1px solid #ddd;
+border-radius: 4px ;
+transition: background-color 0.3s;
+}
+li.completed {
+    background-color: #d4edda;
+    color:#155724;
+    text-decoration: line-through;
+}
+
+li:hover{
+    background-color: #f1f1f1;
+}
