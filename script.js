@@ -33,3 +33,7 @@ filteredTasks.forEach((task, index) => {
     taskList.appendChild(taskItem);
 });
 }
+function toggleComplete(index) {
+    tasks[index].completed = !tasks[index].completed;
+    renderTasks();
+}
