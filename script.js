@@ -12,7 +12,7 @@ addTaskBtn.addEventListener('click', () => {
         taskInput.value = '';
         renderTasks();
     }
-});
+}); 
 
 function renderTasks(filter='all'){
     taskList.innerHTML = '';
@@ -33,11 +33,19 @@ filteredTasks.forEach((task, index) => {
     taskList.appendChild(taskItem);
 });
 }
+
 function toggleComplete(index) {
     tasks[index].completed = !tasks[index].completed;
     renderTasks();
 }
+
 function deleteTask(index) {
     tasks.splice(index, 1);
     renderTasks();
 }
+
+filters.addEventListener('click', (event) => {
+    if (event.target.tagName === 'BUTTON') {
+        renderTasks(event.target.getAttribute('data-filter'));
+    }
+});
