@@ -13,3 +13,23 @@ addTaskBtn.addEventListener('click', () => {
         renderTasks();
     }
 });
+
+function renderTasks(filter='all'){
+    taskList.innerHTML = '';
+    const filteredTasks = tasks.filter(task => 
+        filter === 'all' || 
+        (filter === 'completed' && task.completed) || 
+        (filter === 'pending' && !task.completed)
+    );
+
+filteredTasks.forEach((task, index) => {
+    const taskItem = document.createElement('li');
+    taskItem.className = task.completed ? 'completed' : '';
+    taskItem.innerHTML = `
+        <span>${task.text}</span>
+        <button onclick="toggleComplete(${index})">${task.completed ? 'Undo' : 'Complete'}</button>
+        <button onclick="deleteTask(${index})">Trash</button>
+    `;
+    taskList.appendChild(taskItem);
+});
+}
